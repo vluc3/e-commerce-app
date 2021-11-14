@@ -6,13 +6,13 @@ const schemas = gql`
     categories: [Category!]!
 
     product(id: ID!): Product
-    products: [Product!]!
+    products(filter: ProductsFilter): [Product!]!
   }
 
   type Category {
     id: ID!
     name: String!
-    products: [Product!]!
+    products(filter: ProductsFilter): [Product!]!
   }
 
   type Product {
@@ -20,10 +20,24 @@ const schemas = gql`
     name: String!
     description: String!
     category: Category
+    reviews: [Review!]!
     image: String!
     quantity: Int!
     price: Float!
     onSale: Boolean!
+  }
+
+  type Review {
+    id: ID!
+    date: String!
+    title: String!
+    comment: String!
+    rating: Int!
+  }
+
+  input ProductsFilter {
+    onSale: Boolean
+    avgRating: Int
   }
 `;
 

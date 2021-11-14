@@ -2,17 +2,16 @@ query($categoryId: ID!) {
   category(id: $categoryId) {
     id
     name
-    products {
+    products(filter: {
+      onSale: true
+      avgRating: 5
+    }) {
       name
       price
-    }
-  }
-
-  products {
-    id
-    name
-    category {
-      name
+      onSale
+      reviews {
+        rating
+      }
     }
   }
 
@@ -23,12 +22,28 @@ query($categoryId: ID!) {
 
   product(id: "2c931e7e-510f-49e5-aed6-d6b44087e5a1") {
     name
+    description
     image
+    price
+    reviews {
+      title
+      comment
+      rating
+    }
   }
 
-  products {
-    id
+  products(filter: {
+    onSale: true
+    avgRating: 5
+  }) {
     name
-    image
+    price
+    onSale
+    category {
+      name
+    }
+    reviews {
+      rating
+    }
   }
 }
