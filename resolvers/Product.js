@@ -1,9 +1,9 @@
 Product = {
-  category: ({ categoryId }, args, { categories }) => {
-    return categories.find(category => category.id === categoryId);
+  category: ({ categoryId }, args, { database }) => {
+    return database.categories.find(category => category.id === categoryId);
   },
-  reviews: ({ id }, args, { reviews }) => {
-    return reviews.filter(review => review.productId === id);
+  reviews: ({ id }, args, { database }) => {
+    return database.reviews.filter(review => review.productId === id);
   }
 };
 

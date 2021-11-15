@@ -1,6 +1,6 @@
 Category = {
-  products: ({ id: categoryId }, { filter }, { products, reviews }) => {
-    let filteredProducts = products.filter((product) => {
+  products: ({ id: categoryId }, { filter }, { database }) => {
+    let filteredProducts = database.products.filter((product) => {
       return product.categoryId === categoryId;
     });
 
@@ -18,7 +18,7 @@ Category = {
           let sumRating = 0;
           let reviewCount = 0;
 
-          reviews.forEach(review => {
+          database.reviews.forEach(review => {
             if (review.productId === product.id) {
               sumRating += review.rating;
               reviewCount++;
