@@ -18,7 +18,7 @@ const database = {
   reviews
 }
 
-const server = new ApolloServer({
+const apolloServer = new ApolloServer({
   typeDefs: schemas,
   resolvers: {
     Query,
@@ -31,6 +31,7 @@ const server = new ApolloServer({
   }
 });
 
-server.listen().then(( { url }) => {
-  console.log(`Server is ready at ${url}`);
+apolloServer.listen().then(({ url }) => {
+  console.log();
+  console.log(`Apollo server is ready at ${url}`);
 });
