@@ -2,9 +2,9 @@
 git init
 git add .
 git commit -m "Initial commit"
-git remote add origin https://github.com/vluc3/e-commerce-node.git
+git remote add origin https://github.com/vluc3/graphql-commerce-node.git
 git branch -M main
-git remote set-url origin git@github.com:vluc3/e-commerce-node.git
+git remote set-url origin git@github.com:vluc3/graphql-commerce-node.git
 git push --set-upstream origin main
 _________________________________
 
@@ -16,3 +16,8 @@ npm i -s -D nodemon
 "dev": "nodemon index"
 
 npm run start:dev
+
+_________________________________
+
+
+https://github.com/harblaith7/GraphQL-Course-Udemy
